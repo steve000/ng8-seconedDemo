@@ -26,8 +26,16 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
+  // 模拟数据
+  // getHeroes(): Hero[] {
+  //   return HEROES;
+  // }
+
+  // 采用service
   getHeroes(): void {
+    // this.heroes = this.heroService.getHeroes();  // 同步
     // Observable
+
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
